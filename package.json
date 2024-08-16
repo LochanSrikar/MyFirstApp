@@ -1,0 +1,23 @@
+{
+  "name": "myfirstapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LochanSrikar/MyFirstApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LochanSrikar/MyFirstApp/issues"
+  },
+  "homepage": "https://github.com/LochanSrikar/MyFirstApp#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
