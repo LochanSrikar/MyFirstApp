@@ -5,13 +5,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t MyFirstApp .'
+                sh 'docker build -t lochansrikar/dockerdemo .'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'docker run --rm MyFirstApp npm test'
+                sh 'docker run --rm lochansrikar/dockerdemo npm test'
             }
         }
 
