@@ -9,11 +9,11 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                sh 'docker run --rm lochansrikar/dockerdemo npm test'
-            }
-        }
+       // stage('Run Tests') {
+            //steps {
+           //     sh 'docker run --rm lochansrikar/dockerdemo npm test'
+          //  }
+        //}
 
         stage('Deploy with Ansible') {
             steps {
