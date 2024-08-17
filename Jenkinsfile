@@ -20,8 +20,8 @@ pipeline {
                 ansiblePlaybook (
                     
                     playbook: 'ansible/deploy.yml',
-                    inventory: 'ansible/inventory.ini'
-                    credentialsId: 'ansible-credentials-id',
+                    inventory: 'ansible/inventory.ini',
+                    credentialsId: 'ansible-credentials-id'
                     )
             }
         }
