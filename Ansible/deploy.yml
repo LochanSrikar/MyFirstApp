@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: webservers
   tasks:
     - name: Stop and remove existing container
       docker_container:
