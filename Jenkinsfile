@@ -17,12 +17,7 @@ pipeline {
 
         stage('Deploy with Ansible') {
             steps {
-                ansiblePlaybook (
-                    
-                    playbook: 'Ansible/deploy.yml',
-                    inventory: 'Ansible/inventory.ini',
-                    credentialsId: 'ssh-credentials-id'
-                    )
+                ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Ansible/inventory.ini', playbook: 'Ansible/deploy.yml', vaultTmpPath: ''
             }
         }
     }
