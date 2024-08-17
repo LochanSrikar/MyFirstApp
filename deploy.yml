@@ -1,0 +1,14 @@
+- hosts: 44.212.14.58
+  tasks:
+    - name: Stop and remove existing container
+      docker_container:
+        name: myfirstapp  # Update this if your container should have a different name
+        state: absent
+
+    - name: Start a new container
+      docker_container:
+        name: myfirstapp  # Ensure consistency with the Docker container name
+        image: myfirstapp # Update to match the Docker image built in Jenkins
+        state: started
+        restart_policy: always
+
