@@ -17,7 +17,9 @@ pipeline {
 
         stage('Deploy with Ansible') {
             steps {
-                ansiblePlaybook credentialsId: 'ansible-credentials-id', playbook: 'deploy.yml'
+                    playbook: 'ansible/deploy.yml',
+                    inventory: 'ansible/inventory.ini'
+                ansiblePlaybook credentialsId: 'ansible-credentials-id', 
             }
         }
     }
