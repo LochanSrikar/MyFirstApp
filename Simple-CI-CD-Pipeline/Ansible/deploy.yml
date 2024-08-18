@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: webservers
   tasks:
     - name: Stop and remove existing container
       docker_container:
@@ -10,5 +10,7 @@
         name: myfirstapp  # Ensure consistency with the Docker container name
         image: myfirstapp # Update to match the Docker image built in Jenkins
         state: started
+        ports:
+          - "3000:3000"  # Map host port 3000 to container port 3000
         restart_policy: always
 
