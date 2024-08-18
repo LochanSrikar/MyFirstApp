@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-username/nodejs-2tier-app.git'
+            }
+        }
+        stage('Build Frontend') {
+            steps {
+                script {
+                    docker.build('my-frontend-image', 'frontend')
+                }
+            }
+        }
+        stage('Build Backend') {
+            steps {
+                script {
+                    docker.build('my-backend-image', 'backend')
+                }
+            }
+        }
+        stage('Deploy Frontend') {
+            steps {
+                ansiblePlaybook(
+                    playbook: 'ansible/deploy_frontend.yml',
+                    inventory: 'inventory/hosts'
+                )
+            }
+        }
+        stage('Deploy Backend') {
+            steps {
+                ansiblePlaybook(
+                    playbook: 'ansible/deploy_backend.yml',
+                    inventory: 'inventory/hosts'
+                )
+            }
+        }
+    }
+}
+
