@@ -17,7 +17,7 @@ pipeline {
 
         stage('Deploy with Ansible') {
             steps {
-                ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Ansible/inventory.ini', playbook: 'Ansible/deploy.yml', vaultTmpPath: ''
+                ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Simple-CI-CD-Pipeline/Ansible/inventory.ini', playbook: 'Simple-CI-CD-Pipeline/Ansible/deploy.yml', vaultTmpPath: ''
             }
         }
     }
