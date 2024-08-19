@@ -5,7 +5,7 @@ pipeline {
         stage('Build Frontend') {
             steps {
                 script {
-                    sh 'docker build -t my-frontend-image MyFiestApp/Two-Tier-Application/app'
+                    sh 'docker build -t my-frontend-image MyFirstApp/Two-Tier-Application/app'
                 }
             }
         }
