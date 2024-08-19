@@ -1,18 +1,19 @@
-# Use an official Node.js runtime as the base image
 FROM node:14
 
-# Set the working directory
 WORKDIR /app
 
-# Copy the backend code into the container
-COPY app/backend/package*.json ./
-RUN cd backend && npm install
+# Copy backend package files to the backend directory
+COPY app/backend/package*.json backend/
 
-# Copy the frontend code into the container
-COPY app/frontend/ ./
+# Install backend dependencies
+WORKDIR /app/backend
+RUN npm install
 
-# Copy the backend source code
-COPY app/backend/ ./backend/
+# Copy the rest of the backend code
+COPY app/backend ./
+
+# Copy the frontend code to its own directory
+COPY app/frontend frontend/
 
 # Expose the necessary port
 EXPOSE 3000
