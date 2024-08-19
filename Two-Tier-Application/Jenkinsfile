@@ -1,11 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/your-username/nodejs-2tier-app.git'
-            }
-        }
+        
         stage('Build Frontend') {
             steps {
                 script {
