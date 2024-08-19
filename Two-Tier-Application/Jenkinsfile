@@ -5,14 +5,14 @@ pipeline {
         stage('Build Frontend') {
             steps {
                 script {
-                    sh 'docker build -t my-frontend-image MyFirstApp/Two-Tier-Application/app'
+                    sh 'docker build -t my-frontend-image MyFirstApp/Two-Tier-Application/app .'
                 }
             }
         }
         stage('Build Backend') {
             steps {
                 script {
-                    sh 'docker build -t my-backend-image MyFirstApp/Two-Tier-Application/app'
+                    sh 'docker build -t my-backend-image MyFirstApp/Two-Tier-Application/app .'
                 }
             }
         }
