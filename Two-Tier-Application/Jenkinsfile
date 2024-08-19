@@ -5,14 +5,14 @@ pipeline {
         stage('Build Frontend') {
             steps {
                 script {
-                    docker.build('my-frontend-image', 'frontend')
+                    sh 'docker build -t my-frontend-image app/frontend'
                 }
             }
         }
         stage('Build Backend') {
             steps {
                 script {
-                    docker.build('my-backend-image', 'backend')
+                    sh 'docker build -t my-frontend-image app/backend'
                 }
             }
         }
