@@ -1,19 +1,20 @@
 FROM node:14
 
-WORKDIR /app
+WORKDIR Two-Tier-Application/app
 
 # Copy backend package files to the backend directory
-COPY app/backend/package*.json backend/
+
+COPY Two-Tier-Application/app/backend/package*.json backend/
 
 # Install backend dependencies
-WORKDIR /app/backend
+WORKDIR Two-Tier-Application/app/backend
 RUN npm install
 
 # Copy the rest of the backend code
-COPY app/backend ./
+COPY Two-Tier-Application/app/backend ./
 
 # Copy the frontend code to its own directory
-COPY app/frontend frontend/
+COPY Two-Tier-Application/app/frontend frontend/
 
 # Expose the necessary port
 EXPOSE 3000
