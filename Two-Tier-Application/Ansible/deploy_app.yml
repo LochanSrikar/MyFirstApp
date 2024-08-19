@@ -1,0 +1,9 @@
+- hosts: frontend
+  tasks:
+    - name: Deploy combined Docker container
+      docker_container:
+        name: combined-app
+        image: combined-app-image
+        state: started
+        ports:
+          - "80:3000"
