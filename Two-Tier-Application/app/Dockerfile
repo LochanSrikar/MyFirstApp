@@ -5,11 +5,11 @@ FROM node:14
 WORKDIR /app
 
 # Copy the backend code into the container
-COPY app/backend/package*.json ./backend/
+COPY app/backend/package*.json ./
 RUN cd backend && npm install
 
 # Copy the frontend code into the container
-COPY app/frontend/ ./frontend/
+COPY app/frontend/ ./
 
 # Copy the backend source code
 COPY app/backend/ ./backend/
